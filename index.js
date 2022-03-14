@@ -128,11 +128,13 @@ app.get("/masteraccount",async(req,res)=>{
     catch(err){
         return res.status(500).send({message:err.message})
     }
-})
+});
+
 
 app.post("/users",async(req,res)=>{
     try{
         const user = await userschema.create(req.body);
+        return res.status(201).send(post)
 
     }
     catch(err)
